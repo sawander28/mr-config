@@ -1,0 +1,32 @@
+# -*- mode: sh -*-
+
+#
+# 30. Themes
+#
+
+[$HOME/repos/themes/fluent-gtk-theme]
+checkout = git clone git@rpi3.home.local:repos/fluent-gtk-theme.git
+remotes = git remote add upstream https://github.com/vinceliuice/Fluent-gtk-theme.git
+skip = lazy
+
+[$HOME/repos/themes/icons/fluent-icon-theme]
+checkout = git clone git@rpi3.home.local:repos/fluent-icon-theme.git
+remotes = git remote add upstream https://github.com/vinceliuice/Fluent-icon-theme.git
+skip = lazy
+
+[$HOME/repos/themes/icons/plan9-xcursor-theme]
+checkout = git clone git@rpi3.home.local:repos/plan9-xcursor-theme.git
+remotes = git remote add upstream https://github.com/wintermute-cell/xcursor-plan9.git
+skip = lazy
+
+[$HOME/repos/themes/fonts/5x13]
+checkout = git clone git@rpi3.home.local:repos/5x13.git
+remotes = git remote add upstream https://github.com/leahneukirchen/5x13.git
+skip = lazy
+
+[$HOME/repos/themes/fonts/codec]
+checkout = git clone git@rpi3.home.local:repos/codec.git
+remotes = git remote add upstream https://github.com/leahneukirchen/codec.git
+skip = lazy
+
+# vim: fenc=utf-8 ft=sh ts=2 sts=2 sw=2 et

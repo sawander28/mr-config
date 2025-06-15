@@ -1,0 +1,9 @@
+#
+# 60. Desktop
+#
+
+[$HOME/repos/desktop/mpdris2-rs]
+checkout = git clone git@rpi3.home.local:repos/mpdris2-rs.git
+fixups =
+  cargo build --release && install -m 0750 target/release/mpdris2-rs
+  [ -f /usr/local/bin/mpdris2-rs ] && info "Installed to /usr/local"

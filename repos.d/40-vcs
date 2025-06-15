@@ -1,0 +1,40 @@
+# -*- mode: sh -*-
+
+#
+# 40. VCS
+#
+
+# Required: perl-Test-Output
+[$HOME/repos/vcs/stow]
+name = stow-release
+checkout = git clone git@rpi3.home.local:repos/stow.git
+remotes = git remote add upstream https://git.savannah.gnu.org/git/stow.git
+fixups =
+    cd $MR_REPO
+    [ -f configure ] || autoreconf -fi 
+    ./configure --prefix=/usr.home.local
+    make install
+skip = true
+
+[$HOME/repos/vcs/kitenet-mr]
+checkout = git clone git@rpi3.home.local:repos/kitenet-mr.git
+remotes = git remote add upstream git@github.com/aspiers/kitenet-mr.git
+fixups = make PREFIX=/usr.home.local install && info "Installed $MR_CONFIG)"
+skip = true
+
+[$HOME/repos/vcs/myrepos]
+checkout = git clone git@rpi3.home.local:repos/myrepos.git
+remotes = git remote add upstream git://myrepos.branchable.com
+fixups = cd $MR_REPO && make install && info "Installed $STOW_NAME"
+
+[$HOME/repos/vcs/git]
+checkout = git clone git@rpi3.home.local:repos/git.git
+fixups =
+  make configure
+  ./configure --prefix=/usr.home.local
+  make all doc
+  make install 
+# make install-doc install-html
+skip = true
+
+# vim: fenc=utf-8 ft=dosini ts=2 sts=2 sw=2 et
