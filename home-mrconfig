@@ -93,19 +93,16 @@ stowable = true
 [$HOME/.gnupg]
 checkout = git clone ssh://git@rpi3.lan:/repos/wandsas/gnupg-config $MR_REPO
 fixups = checkprivs
-lib = MR_FOLD=
 skip = ! myworkstation
 
 [$HOME/.ssh]
 checkout = git clone ssh://git@rpi3.lan:/repos/wandsas/ssh-config $MR_REPO
 fixups = checkprivs
-lib = MR_FOLD=
 skip = ! myworkstation
 
 [$HOME/.password-store]
 checkout = git clone ssh://git@rpi3.lan:/repos/wandsas/password-store $MR_REPO
 fixups = checkprivs
-lib = MR_FOLD=
 skip = ! myworkstation
 
 # vim: fenc=utf-8 ft=dosini ts=2 sts=2 sw=2 et
