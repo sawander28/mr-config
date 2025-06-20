@@ -57,51 +57,51 @@ fixups =
 
 [$HOME/repos/wandsas/shell-env]
 checkout = git clone git@rpi3.lan:/repos/wandsas/shell-env
-remotes = git remote add gitlab ssh://git@gitlab.com/sawander/shell-env.git
+remotes = git remote add gitlab git@gitlab.com:sawander/shell-env.git
 lib = MR_FOLD=
 stowable = true
 
 [$HOME/repos/wandsas/mail-config]
 checkout = git clone git@rpi3.lan:/repos/wandsas/mail-config
-remotes = git remote add gitlab ssh://git@gitlab.com/sawander/mail-config.git
+remotes = git remote add gitlab git@gitlab.com:sawander/mail-config.git
 stowable = true
 fixups = checkprivs 
 skip = ! myworkstation
 
 [$HOME/repos/wandsas/vim-config]
 checkout = git clone git@rpi3.lan:/repos/wandsas/vim-config
-remotes = git remote add gitlab ssh://git@gitlab.com/sawander/vim-config.git
+remotes = git remote add gitlab git@gitlab.com:sawander/vim-config.git
 stowable = true
 
 [$HOME/repos/wandsas/sway-desktop]
 checkout = git clone git@rpi3.lan:/repos/wandsas/sway-desktop
-remotes = git remote add gitlab ssh://git@gitlab.com/sawander/sway-desktop.git
+remotes = git remote add gitlab git@gitlab.com:sawander/sway-desktop.git
 lib = MR_FOLD=
 stowable = true
 
 [$HOME/repos/wandsas/xorg-desktop]
 checkout = git clone git@rpi3.lan:/repos/wandsas/xorg-desktop
-remotes = git remote add gitlab ssh://git@gitlab.com/sawander/xorg-desktop.git
+remotes = git remote add gitlab git@gitlab.com:sawander/xorg-desktop.git
 stowable = true
 skip = true
 
 [$HOME/repos/wandsas/git-config]
 checkout = git clone git@rpi3.lan:/repos/wandsas/git-config
-remotes = git remote add gitlab ssh://git@gitlab.com/sawander/mygit.git
+remotes = git remote add gitlab git@gitlab.com:sawander/mygit.git
 stowable = true
 
 [$HOME/.gnupg]
-checkout = git clone ssh://git@rpi3.lan:/repos/wandsas/gnupg-config $MR_REPO
+checkout = git clone git@rpi3.lan:/repos/wandsas/gnupg-config $MR_REPO
 fixups = checkprivs
 skip = ! myworkstation
 
 [$HOME/.ssh]
-checkout = git clone ssh://git@rpi3.lan:/repos/wandsas/ssh-config $MR_REPO
+checkout = git clone git@rpi3.lan:/repos/wandsas/ssh-config $MR_REPO
 fixups = checkprivs
 skip = ! myworkstation
 
 [$HOME/.password-store]
-checkout = git clone ssh://git@rpi3.lan:/repos/wandsas/password-store $MR_REPO
+checkout = git clone git@rpi3.lan:password-store.git $MR_REPO
 fixups = checkprivs
 skip = ! myworkstation
 
