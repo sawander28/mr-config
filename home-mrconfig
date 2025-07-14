@@ -83,7 +83,6 @@ stowable = true
 checkout = git clone git@rpi3.lan:/repos/wandsas/xorg-desktop
 remotes = git remote add gitlab git@gitlab.com:sawander/xorg-desktop.git
 stowable = true
-skip = true
 
 [$HOME/repos/wandsas/git-config]
 checkout = git clone git@rpi3.lan:/repos/wandsas/git-config
