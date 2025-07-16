@@ -10,7 +10,7 @@ lib =
   hostname="$(hostname)"
   whoami="$(whoami)"
   anon(){
-    ( GIT_CONFIG_HOME=$HOME/.git/config remote.origin.url || \
+    ( GIT_CONFIG_HOME=/home/anon/.git/config remote.origin.url || \
       cat .git/remotes/origin ) | grep -q 'git://'
   }
   on(){
