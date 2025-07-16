@@ -8,7 +8,6 @@
 checkout = git clone git@rpi3.home.local:repos/extrace.git
 remotes = git remote add upstream git://git.vuxu.org/extrace
 clean = rm -f /usr.home.local/bin/{extrace,pwait}
-remotes = git_add_remote rpi3 git@rpi3.home.local:repos/extrace.git
 fixups = make install clean && info "Compiled $STOW_NAME"
 
 [$HOME/repos/cmdline/xe]
