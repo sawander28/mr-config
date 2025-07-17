@@ -35,7 +35,6 @@ lib =
 	  find "$MR_REPO" -type d -exec chmod 700 {} \;
     info "Privileges checked for $MR_NAME"
     stat -c "%a %n" $MR_REPO | info "$MR_NAME $(awk '{print $1}')"
-   # stat -c "%a %n" $MR_REPO/* | info "$MR_NAME $(awk '{print $1}')"
   }
   mr_init_stow_package () {
     : ${STOW_PKG_TYPE:=symlink}
