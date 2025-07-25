@@ -1,5 +1,3 @@
-# -*- mode: sh -*-
-
 [DEFAULT]
 include = cat /usr/local/lib/mr/stow
 
@@ -15,86 +13,111 @@ lib =
   }
   on(){
     for host in "$@"; do
-		  if [ "${host%@*}" != "${host#*@}" ]; then
-			  if [ "$whoami" != "${host%@*}" ]; then
-				  continue
-				fi
-				host="${host#*@}"
-			fi
-			if [ "$hostname" = "$host" ]; then
-				return 0
-			fi
-		done
-		return 1
-	}
-	myworkstation() {
-		on wandsas@z620
-	}
+      if [ "${host%@*}" != "${host#*@}" ]; then
+        if [ "$whoami" != "${host%@*}" ]; then
+          continue
+        fi
+        host="${host#*@}"
+      fi
+      if [ "$hostname" = "$host" ]; then
+        return 0
+      fi
+    done
+    return 1
+  }
+  myworkstation() {
+    on wandsas@z620
+  }
   checkprivs(){
-	  find "$MR_REPO" -type f -exec chmod 600 {} \;
-	  find "$MR_REPO" -type d -exec chmod 700 {} \;
+    find "$MR_REPO" -type f -exec chmod 600 {} \;
+    find "$MR_REPO" -type d -exec chmod 700 {} \;
     info "Privileges checked for $MR_NAME"
     stat -c "%a %n" $MR_REPO | info "$MR_NAME $(awk '{print $1}')"
   }
-  mr_init_stow_package () {
-    : ${STOW_PKG_TYPE:=symlink}
-    STOW_NO_AUTOMATIC_ACTIONS=yes
-    set_stow_common_opts
+  git_ensure_remote() {
+	  remote="$1"
+	  url="$2"
+	  git remote | grep -q "^$remote$" || {
+	    echo I: Adding remote $remote $url
+	    git remote add "$remote" "$url"
+	  }
+	  git remote get-url "$remote" | grep -q "^$url$" || {
+	    echo I: Changing remote URL for $remote to $url
+	    git remote set-url $remote $url
+	  }
   }
 
 [$HOME/repos/wandsas/mr-config]
 name = mr-config
 order = 1
-checkout = git clone git@rpi3.lan:/repos/wandsas/mr-config $MR_REPO
+checkout = git clone git@rpi3.lan:wandsas/mr-config.git $MR_REPO
 post_checkout =
-  cd "MR_REPO && git remote add gitlab git@gitlab.com:sawander/mr-config.git
-# This loads repos/wandsas/mr-config/.mrconfig
+  cd "$MR_REPO && git remote add gitlab git@gitlab.com:sawander/mr-config.git
+# This load repos/wandsas/mr-config/.mrconfig
 chain = false
 fixups =
   ln -sf "$MR_REPO/home-mrconfig" ~/.mrconfig
   ln -sf "$MR_REPO/.stow-global-ignore" ~
 
+# xbps-install perl-Test-Output texinfo
+[$HOME/builds/stow]
+checkout = git clone git@rpi3.lan:stow.git
+fixups = git_ensure_remote upstream git://git.savannah.gnu.org/stow.git
+  cd $MR_REPO
+  autoreconf -fi
+  ./configure --prefix=/usr/local
+  make -j4
+  sudo make install
+
+[$HOME/builds/myrepos]
+checkout = git clone git@rpi3.lan:myrepos.git
+fixups =
+  git_ensure_remote upstream git://myrepos.branchable.com/myrepos
+  cd $MR_REPO
+  sudo make install
+
 [$HOME/repos/wandsas/shell-env]
-checkout = git clone git@rpi3.lan:/repos/wandsas/shell-env
-remotes = git remote add gitlab git@gitlab.com:sawander/shell-env.git
+checkout = git clone git@rpi3.lan:shell-env.git
+fixups = git_ensure_remote gitlab git@gitlab.com:sawander/shell-env.git
 lib = MR_FOLD=
 stowable = true
 
-[$HOME/repos/wandsas/mail-config]
-checkout = git clone git@rpi3.lan:/repos/wandsas/mail-config
-remotes = git remote add gitlab git@gitlab.com:sawander/mail-config.git
-stowable = true
-fixups = checkprivs 
-skip = ! myworkstation
-
-[$HOME/repos/wandsas/vim-config]
-checkout = git clone git@rpi3.lan:/repos/wandsas/vim-config
-remotes = git remote add gitlab git@gitlab.com:sawander/vim-config.git
-stowable = true
-
 [$HOME/repos/wandsas/sway-desktop]
-checkout = git clone git@rpi3.lan:/repos/wandsas/sway-desktop
-remotes = git remote add gitlab git@gitlab.com:sawander/sway-desktop.git
+checkout = git clone git@rpi3.lan:sway-desktop.git
+fixups = git_ensure_remote gitlab git@gitlab.com:sawander/sway-desktop.git
 lib = MR_FOLD=
 stowable = true
 
 [$HOME/repos/wandsas/xorg-desktop]
-checkout = git clone git@rpi3.lan:/repos/wandsas/xorg-desktop
-remotes = git remote add gitlab git@gitlab.com:sawander/xorg-desktop.git
+checkout = git clone git@rpi3.lan:xorg-desktop.git
+fixups = git_ensure_remote gitlab git@gitlab.com:swander/xorg-desktop.git
+lib = MR_FOLD=
 stowable = true
 
 [$HOME/repos/wandsas/git-config]
-checkout = git clone git@rpi3.lan:/repos/wandsas/git-config
-remotes = git remote add gitlab git@gitlab.com:sawander/mygit.git
+checkout = git clone git@rpi3.lan:git-config.git
+fixups = git_ensure_remote gitlab git@gitlab.com:sawander/git-config.git
 stowable = true
 
-[$HOME/.gnupg]
-checkout = git clone git@rpi3.lan:/repos/wandsas/gnupg-config $MR_REPO
+[$HOME/repos/wandsas/vim-config]
+checkout = git clone git@rpi3.lan:vim-config.git
+fixups = git_ensure_remote gitlab git@gitlab.com:sawander/vim-config.git
+stowable = true
+
+[$HOME/repos/wandsas/mail-config]
+checkout = git clone git@rpi3.lan:mail-config.git
+fixups = git_ensure_remote gitlab git@gitlab.com:sawander/mail-config.git
+stowable = true
 fixups = checkprivs
 skip = ! myworkstation
 
 [$HOME/.ssh]
-checkout = git clone git@rpi3.lan:/repos/wandsas/ssh-config $MR_REPO
+checkout = git clone git@rpi3.lan:ssh-config.git $MR_REPO
+fixups = checkprivs
+skip = ! myworkstation
+
+[$HOME/.gnupg]
+checkout = git clone git@rpi3.lan:gnupg-config.git $MR_REPO
 fixups = checkprivs
 skip = ! myworkstation
 
@@ -104,3 +127,4 @@ fixups = checkprivs
 skip = ! myworkstation
 
 # vim: fenc=utf-8 ft=dosini ts=2 sts=2 sw=2 et
+
