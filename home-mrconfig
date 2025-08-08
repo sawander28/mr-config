@@ -1,51 +1,7 @@
 [DEFAULT]
 include = cat /usr/local/lib/mr/stow
-
-lib =
-  error(){ printf "\033[1m\033[31mERROR: $@\033[m\n"; exit 1; }
-  warning(){ printf "\033[1m\033[1;33mWARNING: $@\033[m\n"; }
-  info(){ printf "\033[1m\033[33m $@\033[m\n"; }
-  hostname="$(hostname)"
-  whoami="$(whoami)"
-  anon(){
-    ( GIT_CONFIG_HOME=/home/anon/.git/config remote.origin.url || \
-      cat .git/remotes/origin ) | grep -q 'git://'
-  }
-  on(){
-    for host in "$@"; do
-      if [ "${host%@*}" != "${host#*@}" ]; then
-        if [ "$whoami" != "${host%@*}" ]; then
-          continue
-        fi
-        host="${host#*@}"
-      fi
-      if [ "$hostname" = "$host" ]; then
-        return 0
-      fi
-    done
-    return 1
-  }
-  myworkstation() {
-    on wandsas@z620
-  }
-  checkprivs(){
-    find "$MR_REPO" -type f -exec chmod 600 {} \;
-    find "$MR_REPO" -type d -exec chmod 700 {} \;
-    info "Privileges checked for $MR_NAME"
-    stat -c "%a %n" $MR_REPO | info "$MR_NAME $(awk '{print $1}')"
-  }
-  git_ensure_remote() {
-	  remote="$1"
-	  url="$2"
-	  git remote | grep -q "^$remote$" || {
-	    echo I: Adding remote $remote $url
-	    git remote add "$remote" "$url"
-	  }
-	  git remote get-url "$remote" | grep -q "^$url$" || {
-	    echo I: Changing remote URL for $remote to $url
-	    git remote set-url $remote $url
-	  }
-  }
+  
+lib = . $HOME/mrlib
 
 [$HOME/repos/wandsas/mr-config]
 name = mr-config
@@ -79,19 +35,16 @@ fixups =
 [$HOME/repos/wandsas/shell-env]
 checkout = git clone git@rpi3.lan:shell-env.git
 fixups = git_ensure_remote gitlab git@gitlab.com:sawander/shell-env.git
-lib = MR_FOLD=
 stowable = true
 
 [$HOME/repos/wandsas/sway-desktop]
 checkout = git clone git@rpi3.lan:sway-desktop.git
 fixups = git_ensure_remote gitlab git@gitlab.com:sawander/sway-desktop.git
-lib = MR_FOLD=
 stowable = true
 
 [$HOME/repos/wandsas/xorg-desktop]
 checkout = git clone git@rpi3.lan:xorg-desktop.git
 fixups = git_ensure_remote gitlab git@gitlab.com:swander/xorg-desktop.git
-lib = MR_FOLD=
 stowable = true
 
 [$HOME/repos/wandsas/git-config]
@@ -127,4 +80,3 @@ fixups = checkprivs
 skip = ! myworkstation
 
 # vim: fenc=utf-8 ft=dosini ts=2 sts=2 sw=2 et
-
