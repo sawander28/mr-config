@@ -1,7 +1,7 @@
 [DEFAULT]
 include = cat /usr/local/lib/mr/stow
   
-lib = . $HOME/mrlib
+lib = . ~/lib/mrlib
 
 [$HOME/repos/wandsas/mr-config]
 name = mr-config
