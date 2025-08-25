@@ -9,26 +9,31 @@ checkout = git clone git@rpi3.home.local:repos/extrace.git
 remotes = git remote add upstream git://git.vuxu.org/extrace
 clean = rm -f /usr.home.local/bin/{extrace,pwait}
 fixups = make install clean && info "Compiled $STOW_NAME"
+skip = true
 
 [$HOME/repos/cmdline/xe]
 checkout = git clone git@rpi3.home.local:repos/xe.git
 remotes = git_add_remote upstream git://git.vuxu.org/xe
 fixups = make install && info "Installed $STOW_NAME"
+skip = true
 
 [$HOME/repos/cmdline/logcatch]
 checkout = git clone git@rpi3.home.local:repos/logcatch.git
 remotes = git remote add upstream git://git.vuxu.org/logcatch
 fixups =  make install clean && info "Installed $STOW_NAME"
+skip = true
 
 [$HOME/repos/cmdline/rwc]
 checkout = git clone git@rpi3:repos/rwc.git
 remotes = git remote add upstream git://git.vuxu.org/rwc
 fixups = make install clean && info "Installed $STOW_NAME"
+skip = true
 
 [$HOME/repos/cmdline/direnv]
 checkout = git clone git@rpi3.home.local:repos/direnv.git
 remotes = git remote add upstream git@github.com/direnv/direnv.git
 fixups = make install && info "Installed direnv"
+skip = true
 
 [$HOME/repos/cmdline/libarchive]
 checkout = git clone git@rpi3.home.local:repos/libarchive.git
@@ -37,5 +42,6 @@ fixus =
   autoreconf -fi
   ./configure --prefix /usr.home.local
   make install
+skip = true
 
 # vim: fenc=utf-8 ft=dosini ts=2 sts=2 sw=2 et
