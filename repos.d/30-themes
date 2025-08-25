@@ -11,22 +11,22 @@ skip = lazy
 
 [$HOME/repos/themes/icons/fluent-icon-theme]
 fixups = git_ensure_remote upstream 
-checkout = git clone git@rpi3.home.local:repos/fluent-icon-theme.git
-remotes = git remote add upstream https://github.com/vinceliuice/Fluent-icon-theme.git
+checkout = git clone git@rpi3.lan:fluent-icon-theme.git
+fixups = git_ensure_remote upstream https://github.com/vinceliuice/Fluent-icon-theme.git
 skip = lazy
 
 [$HOME/repos/themes/icons/plan9-xcursor-theme]
-checkout = git clone git@rpi3.lan:repos/plan9-xcursor-theme.git
+checkout = git clone git@rpi3.lan:plan9-xcursor-theme.git
 fixups = git_ensure_remote upstream https://github.com/wintermute-cell/xcursor-plan9.git
 skip = lazy
 
 [$HOME/repos/themes/fonts/5x13]
-checkout = git clone git@rpi3.home.local:repos/5x13.git
-remotes = git remote add upstream https://github.com/leahneukirchen/5x13.git
+checkout = git clone git@rpi3.lan:5x13.git
+fixups = git_ensure_remote upstream https://github.com/leahneukirchen/5x13.git
 skip = lazy
 
 [$HOME/repos/themes/fonts/codec]
-checkout = git clone git@rpi3.home.local:repos/codec.git
+checkout = git clone git@rpi3.lan:codec.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/codec.git
 skip = lazy
 
