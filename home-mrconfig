@@ -1,13 +1,14 @@
 [DEFAULT]
-include = cat /usr/local/lib/mr/stow
-  
-lib =
-  . ~/lib/mr
+include =
+  cat /usr/local/lib/mr/stow
   for f in ~/repos/wandsas/mr-config/sh.d/*.sh; do
     echo "# INCLUDED FROM: $f"
     cat "$f"
     echo # Needed in case file isn't terminated with a newline
   done
+  
+lib =
+  . ~/lib/mr
 
 
 [$HOME/repos/vcs/myrepos]

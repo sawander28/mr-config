@@ -2,13 +2,13 @@
 
 run_cfg_post () {
     dir=.cfg-post.d
-    if [ -z "$ZDOTDIR" ]; then
-        error "ZDOTDIR not set; can't run $dir hoooks"
+    if [ -z "$HOME" ]; then
+        error "HOME not set; can't run $dir hoooks"
     fi
     for f in "$MR_REPO/$dir"/*; do
         if [ -x "$f" ]; then
             stowed="${f##*/}"
-            s="$ZDOTDIR/$dir/$stowed"
+            s="$HOME/$dir/$stowed"
             if [ -x "$s" ]; then
                 info "Running $s ..."
                 if "$s"; then
