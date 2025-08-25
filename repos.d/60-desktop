@@ -9,8 +9,8 @@ fixups =
   if [ -f /usr/local/bin/mpdris2-rs ]; then
     info "Installed /usr/local."
   else
-    cargo clean
-    cargo build --release && install -m 0750 target/release/mpdris2-rs
+    cargo build --release
+    sudo install -m 0750 target/release/mpdris2-rs /usr/local/bin/mpdris
   fi
 
 # vim: fenc=utf-8 ft=sh ts=2 sts=2 sw=2 et
