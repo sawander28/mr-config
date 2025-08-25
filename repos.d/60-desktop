@@ -5,7 +5,7 @@
 [$HOME/repos/desktop/mpdris2-rs]
 checkout = git clone git@rpi3.lan:mpdris2-rs.git
 fixups =
-  git_ensure_remote https://github.com/szclsya/mpdris2-rs.git
+  git_ensure_remote upstream git@github.com:szclsya/mpdris2-rs.git
   if [ -f /usr/local/bin/mpdris2-rs ]; then
     info "Installed /usr/local."
   else
