@@ -8,11 +8,11 @@
 checkout = git clone git@rpi3.lan:repos/git.git
 fixups =
   git_ensure_remote upstream git@github:git/git.git
+  [ -f ./configure ] || autoreconf -fi
   make configure
-  ./configure --prefix=/usr.home.local
+  ./configure --prefix=/home/wandsas/git
   make all doc
   make install 
 # make install-doc install-html
-skip = true
 
 # vim: fenc=utf-8 ft=dosini ts=2 sts=2 sw=2 et
