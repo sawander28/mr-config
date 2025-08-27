@@ -5,9 +5,9 @@
 #
 
 [$HOME/repos/vcs/git]
-checkout = git clone git@rpi3.lan:repos/git.git
+checkout = git clone git@rpi3.lan:git.git
 fixups =
-  git_ensure_remote upstream git@github:git/git.git
+  git_ensure_remote upstream git@github.com:git/git.git
   [ -f ./configure ] || autoreconf -fi
   make configure
   ./configure --prefix=/home/wandsas/git
