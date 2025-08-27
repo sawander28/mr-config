@@ -1,15 +1,13 @@
 # -*- mode: sh -*-
 
-#
-# 20. Cmdline
-#
+# 20. cmdline
 
 [$HOME/repos/cmdline/extrace]
 checkout = git clone git@rpi3.home.local:repos/extrace.git
 remotes = git remote add upstream git://git.vuxu.org/extrace
 clean = rm -f /usr.home.local/bin/{extrace,pwait}
 fixups = make install clean && info "Compiled $STOW_NAME"
-skip = true
+
 
 [$HOME/repos/cmdline/xe]
 checkout = git clone git@rpi3.home.local:repos/xe.git
