@@ -45,6 +45,7 @@ post_checkout =
 
 [$HOME/repos/wandsas/shell-env]
 checkout = git clone git@rpi3.lan:shell-env.git
+lib = MR_FOLD=
 fixups = 
   git_ensure_remote github git@github.com:sawander28/shell-env.git
 stowable = true
@@ -59,6 +60,7 @@ skip = ! myworkstation
 
 [$HOME/repos/wandsas/sway-desktop]
 checkout = git clone git@rpi3.lan:sway-desktop.git
+lib = MR_FOLD=
 fixups =
   git_ensure_remote github git@github.com:sawander28/sway-desktop.git
 stowable = true
