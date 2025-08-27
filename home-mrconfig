@@ -65,7 +65,7 @@ fixups =
   git_ensure_remote github git@github.com:sawander28/sway-desktop.git
 stowable = true
 
-[~/repos/wandsas/xorg-desktop]
+[$HOME/repos/wandsas/xorg-desktop]
 checkout = git clone git@rpi3.lan:xorg-desktop.git
 lib = MR_FOLD=
 fixups =
