@@ -5,13 +5,13 @@ checkout = git clone git@rpi3.lan:extrace.git
 clean = rm -f /usr.home.local/bin/{extrace,pwait}
 fixups =
   git_ensure_remote upstream git://git.vuxu.org/extrace
-  make install && info "Installed $STOW_NAME"
+  sudo make install && info "Installed $STOW_NAME"
 
 [$HOME/repos/cmdline/xe]
 checkout = git clone git@rpi3.lan:xe.git
 fixups =
   git_ensure_remote upstream git://git.vuxu.org/xe
-  make install && info "Installed $STOW_NAME"
+  sudo make install && info "Installed $STOW_NAME"
 
 
 [$HOME/repos/cmdline/logcatch]
@@ -19,12 +19,12 @@ checkout = git clone git@rpi3.home.lan:logcatch.git
 remotes =
 fixups =
   git_ensure_remote upstream git://git.vuxu.org/logcatch
-  make install && info "Installed $STOW_NAME"
+  sudo make install && info "Installed $STOW_NAME"
 
 [$HOME/repos/cmdline/direnv]
 checkout = git clone git@rpi3.home.lan:direnv.git
 remotes = git remote add upstream git@github.com/direnv/direnv.git
-fixups = make install && info "Installed direnv"
+fixups = sudo make install && info "Installed direnv"
 skip = true
 
 [$HOME/repos/cmdline/libarchive]
@@ -33,7 +33,7 @@ fixups =
   git_ensure_remote upstream https://github.com/libarchive/libarchive.git
   [ -f ./configure ] || autoreconf -fi
   ./configure --prefix=/usr/local
-  make install
+  sudo make install
 skip = true
 
 # vim: fenc=utf-8 ft=dosini ts=2 sts=2 sw=2 et
