@@ -15,7 +15,7 @@ fixups =
 
 
 [$HOME/repos/cmdline/logcatch]
-checkout = git clone git@rpi3.home.lan:logcatch.git
+checkout = git clone git@rpi3.lan:logcatch.git
 remotes =
 fixups =
   git_ensure_remote upstream git://git.vuxu.org/logcatch
