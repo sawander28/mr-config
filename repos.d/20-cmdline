@@ -5,7 +5,7 @@ checkout = git clone git@rpi3.lan:extrace.git
 clean = rm -f /usr.home.local/bin/{extrace,pwait}
 fixups =
   git_ensure_remote upstream git://git.vuxu.org/extrace
-  sudo make install && info "Installed $STOW_NAME"
+  sudo make install clean && info "Installed $STOW_NAME"
 
 [$HOME/repos/cmdline/xe]
 checkout = git clone git@rpi3.lan:xe.git
@@ -19,7 +19,7 @@ checkout = git clone git@rpi3.lan:logcatch.git
 remotes =
 fixups =
   git_ensure_remote upstream git://git.vuxu.org/logcatch
-  sudo make install && info "Installed $STOW_NAME"
+  sudo make install clean && info "Installed $STOW_NAME"
 
 [$HOME/repos/cmdline/direnv]
 checkout = git clone git@rpi3.home.lan:direnv.git
