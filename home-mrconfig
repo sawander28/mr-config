@@ -95,7 +95,7 @@ fixups = checkprivs
 skip = ! myworkstation
 
 [$HOME/.password-store]
-checkout = git clone git@rpi3.lan:password-store.git $MR_REPO
+checkout = git clone git@rpi3.lan:pass-wandsas.git $MR_REPO
 fixups = checkprivs
 skip = ! myworkstation
 

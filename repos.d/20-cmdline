@@ -1,31 +1,25 @@
-# -*- mode: sh -*-
-
 # 20. cmdline
 
 [$HOME/repos/cmdline/extrace]
 checkout = git clone git@rpi3.home.local:repos/extrace.git
-remotes = git remote add upstream git://git.vuxu.org/extrace
 clean = rm -f /usr.home.local/bin/{extrace,pwait}
-fixups = make install clean && info "Compiled $STOW_NAME"
-
+fixups =
+  git_ensure_remote upstream git://git.vuxu.org/extrace
+  make install && info "Installed $STOW_NAME"
 
 [$HOME/repos/cmdline/xe]
 checkout = git clone git@rpi3.home.local:repos/xe.git
-remotes = git_add_remote upstream git://git.vuxu.org/xe
-fixups = make install && info "Installed $STOW_NAME"
-skip = true
+fixups =
+  git_ensure_remote upstream git://git.vuxu.org/xe
+  make install && info "Installed $STOW_NAME"
+
 
 [$HOME/repos/cmdline/logcatch]
 checkout = git clone git@rpi3.home.local:repos/logcatch.git
-remotes = git remote add upstream git://git.vuxu.org/logcatch
-fixups =  make install clean && info "Installed $STOW_NAME"
-skip = true
-
-[$HOME/repos/cmdline/rwc]
-checkout = git clone git@rpi3:repos/rwc.git
-remotes = git remote add upstream git://git.vuxu.org/rwc
-fixups = make install clean && info "Installed $STOW_NAME"
-skip = true
+remotes =
+fixups =
+  git_ensure_remote upstream git://git.vuxu.org/logcatch
+  make install && info "Installed $STOW_NAME"
 
 [$HOME/repos/cmdline/direnv]
 checkout = git clone git@rpi3.home.local:repos/direnv.git
@@ -35,10 +29,10 @@ skip = true
 
 [$HOME/repos/cmdline/libarchive]
 checkout = git clone git@rpi3.home.local:repos/libarchive.git
-remotes = git remote add upstream https://github.com/libarchive/libarchive.git
-fixus =
-  autoreconf -fi
-  ./configure --prefix /usr.home.local
+fixups =
+  git_ensure_remote upstream https://github.com/libarchive/libarchive.git
+  [ -f ./configure ] || autoreconf -fi
+  ./configure --prefix=/usr/local
   make install
 skip = true
 

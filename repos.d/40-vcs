@@ -12,12 +12,13 @@ fixups =
   make all doc
   make install 
 # make install-doc install-html
+skip = true
 
 [$HOME/repos/vcs/pass]
 checkout = git clone git@rpi3.lan:pass.git
 fixups =
   git_ensure_remote upstream https://git.zx2c4.com/password-store
   sudo make PREFIX=/usr/local WITH_BASHCOMP=yes WITH_ZSHCOMP=y install
-  install contrib/dmenu/passmenu /usr/local/bin
+  sudo install contrib/dmenu/passmenu /usr/local/bin
 
 # vim: fenc=utf-8 ft=dosini ts=2 sts=2 sw=2 et
