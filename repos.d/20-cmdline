@@ -11,7 +11,7 @@ fixups =
 checkout = git clone git@rpi3.lan:xe.git
 fixups =
   git_ensure_remote upstream git://git.vuxu.org/xe
-  sudo make install && info "Installed $STOW_NAME"
+  sudo make install clean && info "Installed $STOW_NAME"
 
 
 [$HOME/repos/cmdline/logcatch]
