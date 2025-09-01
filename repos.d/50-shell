@@ -5,22 +5,22 @@
 #
 
 [$HOME/repos/shells/dash]
-checkout = git clone git@rpi3.home.local:repos/dash.git
+checkout = git clone git@rpi3.home.lan:dash.git
 remotes = git remote add upstream git@github.com:nyuichi/dash.git
 fixups =
   autoreconf -fi
-  ./configure --prefix=/usr.home.local --enable-static
+  ./configure --prefix=/usr/local --enable-static
   make all
 skip = true
 
 [$HOME/repos/shells/zsh]
-checkout = git clone git@rpi3.home.local:repos/zsh.git $MR_REPO
+checkout = git clone git@rpi3.lan:zsh.git $MR_REPO
 remotes = git remote add upstream git://git.code.sf.net/p/zsh/code
-fixups = autoreconf -fi && ./configure --prefix=/usr.home.local
+fixups = autoreconf -fi && ./configure --prefix=/usr/local
 skip = true
 
 [$HOME/repos/shells/mksh]
-checkout = git clone git@rpi3.home.local:repos/mksh.git $MR_REPO
+checkout = git clone git@rpi3.lan:mksh.git $MR_REPO
 remotes = git remote add upstream https://github.com/MirBSD/mksh.git
 skip = true
 
