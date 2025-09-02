@@ -1,33 +1,26 @@
-# -*- mode: sh -*-
 
-#
 # 30. Themes
-#
 
 [$HOME/repos/themes/fluent-gtk-theme]
 checkout = git clone git@rpi3.lan:fluent-gtk-theme.git
-fixups = git_ensure_remote upstream https://github.com/vinceliuice/Fluent-gtk-theme.git
-skip = lazy
+fixups =
+  git_ensure_remote upstream https://github.com/vinceliuice/Fluent-gtk-theme.git
 
 [$HOME/repos/themes/icons/fluent-icon-theme]
-fixups = git_ensure_remote upstream 
 checkout = git clone git@rpi3.lan:fluent-icon-theme.git
-fixups = git_ensure_remote upstream https://github.com/vinceliuice/Fluent-icon-theme.git
-skip = lazy
+fixups =
+  git_ensure_remote upstream https://github.com/vinceliuice/Fluent-icon-theme.git
 
 [$HOME/repos/themes/icons/plan9-xcursor-theme]
 checkout = git clone git@rpi3.lan:plan9-xcursor-theme.git
 fixups = git_ensure_remote upstream https://github.com/wintermute-cell/xcursor-plan9.git
-skip = lazy
 
 [$HOME/repos/themes/fonts/5x13]
 checkout = git clone git@rpi3.lan:5x13.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/5x13.git
-skip = lazy
 
 [$HOME/repos/themes/fonts/codec]
 checkout = git clone git@rpi3.lan:codec.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/codec.git
-skip = lazy
 
 # vim: fenc=utf-8 ft=sh ts=2 sts=2 sw=2 et

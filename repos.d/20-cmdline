@@ -22,18 +22,17 @@ fixups =
   sudo make install clean && info "Installed $STOW_NAME"
 
 [$HOME/repos/cmdline/direnv]
-checkout = git clone git@rpi3.home.lan:direnv.git
-remotes = git remote add upstream git@github.com/direnv/direnv.git
-fixups = sudo make install && info "Installed direnv"
-skip = true
+checkout = git clone git@rpi3.lan:direnv.git
+fixups =
+  git_remote_ensure github git@github.com/direnv/direnv.git
+  sudo make install && info "Installed direnv"
 
 [$HOME/repos/cmdline/libarchive]
-checkout = git clone git@rpi3.home.lan:libarchive.git
+checkout = git clone git@rpi3.lan:libarchive.git
 fixups =
   git_ensure_remote upstream https://github.com/libarchive/libarchive.git
   [ -f ./configure ] || autoreconf -fi
   ./configure --prefix=/usr/local
   sudo make install
-skip = true
 
 # vim: fenc=utf-8 ft=dosini ts=2 sts=2 sw=2 et
