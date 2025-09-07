@@ -24,7 +24,7 @@ fixups =
 [$HOME/repos/cmdline/direnv]
 checkout = git clone git@rpi3.lan:direnv.git
 fixups =
-  git_remote_ensure github git@github.com/direnv/direnv.git
+  git_ensure_remote upstream git@github.com/direnv/direnv.git
   sudo make install && info "Installed direnv"
 
 [$HOME/repos/cmdline/libarchive]
