@@ -35,4 +35,8 @@ fixups =
   ./configure --prefix=/usr/local
   sudo make install
 
+[$HOME/repos/cmdline/unix-tools]
+checkout = git clone git@rpi3.lan:unix-tools.git
+fixups = sudo make install
+
 # vim: fenc=utf-8 ft=dosini ts=2 sts=2 sw=2 et
