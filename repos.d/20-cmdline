@@ -34,6 +34,7 @@ fixups =
   [ -f ./configure ] || autoreconf -fi
   ./configure --prefix=/usr/local
   sudo make install
+skip = true
 
 [$HOME/repos/cmdline/unix-tools]
 checkout = git clone git@rpi3.lan:unix-tools.git
