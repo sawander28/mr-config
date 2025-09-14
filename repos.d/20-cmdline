@@ -35,4 +35,16 @@ skip = true
 checkout = git clone git@rpi3.lan:unix-tools.git
 update = sudo make install
 
+[$HOME/repos/cmdline/opendoas]
+checkout = git clone git@rpi3.lan:opendoas.git
+fixups = git_ensure_remote upstream git@github.com/Duncaen/OpenDoas.git
+update =
+  [ -f ./configure ] || autoreconf -fi
+  ./configure --prefix=/usr/local \
+    --enable-static \
+    --with-timespamp
+  make -j4
+  sudo make install
+  make clean
+
 # vim: fenc=utf-8 ft=dosini ts=2 sts=2 sw=2 et
