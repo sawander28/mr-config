@@ -42,7 +42,7 @@ update =
   [ -f ./configure ] || autoreconf -fi
   ./configure --prefix=/usr/local \
     --enable-static \
-    --with-timespamp
+    --with-timestamp
   make -j4
   sudo make install
   make clean
