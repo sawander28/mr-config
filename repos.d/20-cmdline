@@ -41,7 +41,8 @@ update =
     --with-lzma \
     --without-nettle \
     --without-expat
-  sudo make -j4 install
+  sudo make -j4
+  sudo make install
 fixups = git_ensure_remote upstream https://github.com/libarchive/libarchive.git
 
 [$HOME/repos/cmdline/unix-tools]
