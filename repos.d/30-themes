@@ -19,16 +19,16 @@ update = install -d -m0755 ~/repos/themes/plan9-xcursor-theme $XDG_DATA_HOME/ico
 [$HOME/repos/themes/fonts/5x13]
 checkout = git clone git@rpi3.lan:5x13.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/5x13.git
-update = install -d -m0755 ~/repos/themes/fonts/5x13 $XDG_DATA_HOME/fonts
+update = cp -r ~/repos/themes/fonts/5x13 $XDG_DATA_HOME/fonts
 
 [$HOME/repos/themes/fonts/codec]
 checkout = git clone git@rpi3.lan:codec.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/codec.git
-update = install -d -m0755 ~/repos/themes/fonts/codec $XDG_DATA_HOME/fonts
+update = cp -r ~/repos/themes/fonts/codec $XDG_DATA_HOME/fonts
 
 [$HOME/repos/themes/sq]
 checkout = git clone git@rpi3.lan:sq.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/sq.git
-update = install -d -m0755 ~/repos/themes/fonts/sq $XDG_DATA_HOME/fonts
+update = cp -r ~/repos/themes/fonts/sq $XDG_DATA_HOME/fonts
 
 # vim: fenc=utf-8 ft=sh ts=2 sts=2 sw=2 et
