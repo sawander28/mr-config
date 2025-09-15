@@ -19,16 +19,22 @@ update = install -d -m0755 ~/repos/themes/plan9-xcursor-theme $XDG_DATA_HOME/ico
 [$HOME/repos/themes/fonts/5x13]
 checkout = git clone git@rpi3.lan:5x13.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/5x13.git
-update = mkdir -p $XDG_DATA_HOME/fonts/5x13 && cp -r ~/repos/themes/fonts/5x13/{fonts.dir,5x13.bdf} $XDG_DATA_HOME/fonts
+update =
+  mkdir -p $XDG_DATA_HOME/fonts/5x13
+  cd ~/repos/themes/fonts/5x13 && cp fonts.dir 5x13.bdf $XDG_DATA_HOME/fonts
 
 [$HOME/repos/themes/fonts/codec]
 checkout = git clone git@rpi3.lan:codec.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/codec.git
-update = mkdir -p $XDG_DATA_HOME/fonts/codec && cp ~/repos/themes/fonts/codec/{fonts.dir,codec-terminal-narrow.bdf,codec-terminal.bdf,codec-text.bdf,codec-text.psf,codec.bdf} $XDG_DATA_HOME/fonts
+update =
+  mkdir -p $XDG_DATA_HOME/fonts/codec
+  cd ~/repos/themes/fonts/codec && cp fonts.dir codec-terminal-narrow.bdf codec-terminal.bdf codec-text.bdf codec-text.psf codec.bdf $XDG_DATA_HOME/fonts
 
 [$HOME/repos/themes/sq]
 checkout = git clone git@rpi3.lan:sq.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/sq.git
-update = mkdir -p $XDG_DATA_HOME/fonts/sq && cp ~/repos/themes/{fonts.dir,sq.pcf,sqb.pcf} $XDG_DATA_HOME/fonts
+update =
+  mkdir -p $XDG_DATA_HOME/fonts/sq
+  cd ~/repos/themes/sq && cp fonts.dir sq.pcf sqb.pcf $XDG_DATA_HOME/fonts
 
 # vim: fenc=utf-8 ft=sh ts=2 sts=2 sw=2 et
