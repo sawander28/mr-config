@@ -13,10 +13,9 @@ checkout = git clone git@rpi3.lan:fluent-icon-theme.git
 fixups = git_ensure_remote upstream https://github.com/vinceliuice/Fluent-icon-theme.git
 update = ./install.sh --dest $XDG_DATA_HOME/icons
 
-[$HOME/repos/themes/plan9-xcursor-theme]
-checkout = git clone git@rpi3.lan:plan9-xcursor-theme.git
-fixups = git_ensure_remote upstream https://github.com/wintermute-cell/xcursor-plan9.git
-update = install -d -m0755 ~/repos/themes/plan9-xcursor-theme $XDG_DATA_HOME/icons/plan9
+[$HOME/repos/themes/plan9]
+checkout = git clone git@rpi3.lan:plan9.git
+update = cd ~/repos/themes && cp -r plan9 $XDG_DATA_HOME/icons 
 
 [$HOME/repos/themes/fonts/5x13]
 checkout = git clone git@rpi3.lan:5x13.git
