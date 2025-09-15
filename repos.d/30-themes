@@ -1,17 +1,19 @@
 
+#
 # 30. Themes
+#
 
 [$HOME/repos/themes/fluent-gtk-theme]
 checkout = git clone git@rpi3.lan:fluent-gtk-theme.git
 fixups = git_ensure_remote upstream https://github.com/vinceliuice/Fluent-gtk-theme.git
 update = ./install.sh --dest $XDG_DATA_HOME/themes
 
-[$HOME/repos/themes/icons/fluent-icon-theme]
+[$HOME/repos/themes/fluent-icon-theme]
 checkout = git clone git@rpi3.lan:fluent-icon-theme.git
 fixups = git_ensure_remote upstream https://github.com/vinceliuice/Fluent-icon-theme.git
 update = ./install.sh --dest $XDG_DATA_HOME/icons
 
-[$HOME/repos/themes/icons/plan9-xcursor-theme]
+[$HOME/repos/themes/plan9-xcursor-theme]
 checkout = git clone git@rpi3.lan:plan9-xcursor-theme.git
 fixups = git_ensure_remote upstream https://github.com/wintermute-cell/xcursor-plan9.git
 update = install -d -m0755 ~/repos/themes/plan9-xcursor-theme $XDG_DATA_HOME/icons/plan9
@@ -30,7 +32,7 @@ update =
   mkdir -p $XDG_DATA_HOME/fonts/codec
   cd ~/repos/themes/fonts/codec && cp fonts.dir codec-terminal-narrow.bdf codec-terminal.bdf codec-text.bdf codec-text.psf codec.bdf $XDG_DATA_HOME/fonts/codec
 
-[$HOME/repos/themes/sq]
+[$HOME/repos/themes/fonts/sq]
 checkout = git clone git@rpi3.lan:sq.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/sq.git
 update =
