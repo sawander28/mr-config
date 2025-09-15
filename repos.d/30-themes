@@ -4,40 +4,31 @@
 [$HOME/repos/themes/fluent-gtk-theme]
 checkout = git clone git@rpi3.lan:fluent-gtk-theme.git
 fixups = git_ensure_remote upstream https://github.com/vinceliuice/Fluent-gtk-theme.git
-update = ./install.sh \
-  --name fluent \
-  --theme grey \
-  --color light \
-  --icon void \
-  --dest $XDG_DATA_DIR/themes
+update = ./install.sh --dest $XDG_DATA_DIR/themes
 
 [$HOME/repos/themes/icons/fluent-icon-theme]
 checkout = git clone git@rpi3.lan:fluent-icon-theme.git
 fixups = git_ensure_remote upstream https://github.com/vinceliuice/Fluent-icon-theme.git
-update = ./install.sh \
-  --name fluent \
-  --theme grey \
-  --color light \
-  --dest $XDG_DATA_HOME/icons
+update = ./install.sh --dest $XDG_DATA_HOME/icons
 
 [$HOME/repos/themes/icons/plan9-xcursor-theme]
 checkout = git clone git@rpi3.lan:plan9-xcursor-theme.git
 fixups = git_ensure_remote upstream https://github.com/wintermute-cell/xcursor-plan9.git
-update = install -d -m0755 plan9-xcursor-theme $XDG_DATA_HOME/icons/plan9
+update = install -d -m0755 ~/repos/themes/plan9-xcursor-theme $XDG_DATA_HOME/icons/plan9
 
 [$HOME/repos/themes/fonts/5x13]
 checkout = git clone git@rpi3.lan:5x13.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/5x13.git
-update = install -d -m0755 5x13 $XDG_DATA_HOME/fonts
+update = install -d -m0755 ~/repos/themes/fonts/5x13 $XDG_DATA_HOME/fonts
 
 [$HOME/repos/themes/fonts/codec]
 checkout = git clone git@rpi3.lan:codec.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/codec.git
-update = install -d -m0755 codec $XDG_DATA_HOME/fonts
+update = install -d -m0755 ~/repos/themes/fonts/codec $XDG_DATA_HOME/fonts
 
 [$HOME/repos/themes/sq]
 checkout = git clone git@rpi3.lan:sq.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/sq.git
-update = install -d -m0755 sq $XDG_DATA_HOME/fonts
+update = install -d -m0755 ~/repos/themes/fonts/sq $XDG_DATA_HOME/fonts
 
 # vim: fenc=utf-8 ft=sh ts=2 sts=2 sw=2 et
