@@ -25,11 +25,24 @@ fixups = git_ensure_remote upstream git@github.com/direnv/direnv.git
 [$HOME/repos/cmdline/libarchive]
 checkout = git clone git@rpi3.lan:libarchive.git
 update =
-  [ -f ./configure ] || autoreconf -fi
-  ./configure --prefix=/usr/local
-  sudo make install
+  if [ -f ./configure ]; then
+    autoreconf -fi
+  fi
+  ./configure \
+    --prefix=/usr/local
+    --enable-static \
+    --enable-shared \
+    --enable-posix-regex-lib=libc \
+    --enable-xattr \
+    --enable-acl \
+    --with-zstd \
+    --with-lz4 \
+    --with-openssl \
+    --with-lzma \
+    --without-nettle \
+    --without-expat
+  sudo make -j4 install
 fixups = git_ensure_remote upstream https://github.com/libarchive/libarchive.git
-skip = true
 
 [$HOME/repos/cmdline/unix-tools]
 checkout = git clone git@rpi3.lan:unix-tools.git
