@@ -28,7 +28,8 @@ fixups = git_ensure_remote upstream git@github.com/direnv/direnv.git
 [$HOME/repos/cmdline/libarchive]
 checkout = git clone git@rpi3.lan:libarchive.git
 update =
-  if [ -f ./configure ]; then
+  if [ ! -f ./configure ]; then
+
     autoreconf -fi
   fi
   ./configure \
@@ -43,8 +44,9 @@ update =
     --with-openssl \
     --with-lzma \
     --without-nettle \
-    --without-expat
-  sudo make -j4
+    --without-expat \
+    --without-xml2
+  make -j4
   sudo make install
 fixups = git_ensure_remote upstream https://github.com/libarchive/libarchive.git
 
