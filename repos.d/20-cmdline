@@ -28,12 +28,9 @@ fixups = git_ensure_remote upstream git@github.com/direnv/direnv.git
 [$HOME/repos/cmdline/libarchive]
 checkout = git clone git@rpi3.lan:libarchive.git
 update =
-  if [ ! -f ./configure ]; then
-
-    autoreconf -fi
-  fi
+  [ -f ./configure ] || autoreconf -fi
   ./configure \
-    --prefix=/usr/local
+    --prefix=/usr/local \
     --enable-static \
     --enable-shared \
     --enable-posix-regex-lib=libc \

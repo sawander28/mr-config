@@ -15,7 +15,9 @@ update = ./install.sh --dest $XDG_DATA_HOME/icons
 
 [$HOME/repos/themes/plan9]
 checkout = git clone git@rpi3.lan:plan9.git
-update = cd ~/repos/themes && cp -r plan9 $XDG_DATA_HOME/icons 
+update = 
+  mkdir -p ~/.local/share/icons/plan9
+  cd ~/repos/themes/plan9 && cp -r * $XDG_DATA_HOME/icons 
 
 [$HOME/repos/themes/fonts/5x13]
 checkout = git clone git@rpi3.lan:5x13.git
