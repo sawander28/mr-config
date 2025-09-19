@@ -38,6 +38,6 @@ checkout = git clone git@rpi3.lan:sq.git
 fixups = git_ensure_remote upstream https://github.com/leahneukirchen/sq.git
 update =
   mkdir -p $XDG_DATA_HOME/fonts/sq
-  cd ~/repos/themes/sq && cp fonts.dir sq.pcf sqb.pcf $XDG_DATA_HOME/fonts/sq
+  cd ~/repos/themes/fonts/sq && cp fonts.dir sq.pcf sqb.pcf $XDG_DATA_HOME/fonts/sq
 
 # vim: fenc=utf-8 ft=sh ts=2 sts=2 sw=2 et
