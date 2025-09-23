@@ -6,17 +6,23 @@
 [$HOME/repos/themes/fluent-gtk-theme]
 checkout = git clone git@rpi3.lan:fluent-gtk-theme.git
 fixups = git_ensure_remote upstream https://github.com/vinceliuice/Fluent-gtk-theme.git
-update = ./install.sh --dest $XDG_DATA_HOME/themes
+update = 
+  [ -d $XDG_DATA_HOME/themes/Fluent ] && return
+  ./install.sh --dest $XDG_DATA_HOME/themes --icon void --libadwaita
 
 [$HOME/repos/themes/fluent-icon-theme]
 checkout = git clone git@rpi3.lan:fluent-icon-theme.git
 fixups = git_ensure_remote upstream https://github.com/vinceliuice/Fluent-icon-theme.git
-update = ./install.sh --dest $XDG_DATA_HOME/icons
+update =
+  [ -d $XDG_DATA_HOME/icons/Fluent ] && return
+  ./install.sh --dest $XDG_DATA_HOME/icons
 
 [$HOME/repos/themes/plan9]
 checkout = git clone git@rpi3.lan:plan9.git
 update = 
-  [ -d ~/.local/share/icons/plan9 ] || mkdir -p ~/.local/share/icons/plan9
+  [ -d $XDG_DATA_HOME/icons/plan9 ] \
+    && return \
+    || mkdir -p $XDG_DATA_HOME/icons/plan9
   cp -r ~/repos/themes/plan9/* $XDG_DATA_HOME/icons/plan9
 
 [$HOME/repos/themes/fonts/5x13]
