@@ -1,7 +1,5 @@
 [DEFAULT]
-# Add GNU Stow
 include = cat /usr/local/lib/mr/stow
-# Source myrepos perl lib  
 lib = . /usr/local/lib/mr/mrlib
 
 
