@@ -3,4 +3,4 @@
 # This gets loaded via "chain = yes" from ~/.mrconfig
 
 [DEFAULT]
-include = cat $HOME/repos/wandsas/mr-config/repos.d/*
+include = cat $HOME/repos/anon/mr-config/repos.d/*
