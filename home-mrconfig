@@ -18,7 +18,7 @@ order = 3
 checkout = git clone git@myrepo.dmz.home.arpa:mr-config.git $MR_REPO
 # This chainloads ~/.config/mr/.mrconfig
 chain = false
-fixups = git_ensure_remote upstream git@github.com:sawander28/mr-config.git
+fixups = git_ensure_remote github git@github.com:sawander28/mr-config.git
 update = 
 	 ln -sf "$MR_REPO/home-mrconfig" ~/.mrconfig
 	 ln -sf "$MR_REPO/.stow-global-ignore" ~
