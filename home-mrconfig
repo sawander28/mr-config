@@ -68,7 +68,6 @@ checkout = git clone git@myrepo.dmz.home.arpa:admin-scripts.git $MR_REPO
 # My dotfiles
 # =============================================================================
 
-
 [$HOME/repos/anon/vim-config]
 checkout = git clone git@myrepo.dmz.home.arpa:vim-config.git $MR_REPO
 lib = MR_FOLD=
@@ -112,6 +111,18 @@ stowable = true
 [$HOME/repos/anon/xorg-config]
 checkout = git clone git@myrepo.dmz.home.arpa:xorg-config.git $MR_REPO
 lib = MR_FOLD=
+stowable = true
+
+[$HOME/repos/anon/openbsd-config]
+checkout = git clone git@myrepo.dmz.home.arpa:openbsd-config.git $MR_REPO
+stowable = true
+
+[$HOME/repos/anon/freebsd-config]
+checkout = git clone git@myrepo.dmz.home.arpa:freebsd-config.git $MR_REPO
+stowable = true
+
+[$HOME/repos/anon/sawander28.github.io]
+checkout = git clone git@myrepo.dmz.home.arpa:sawander28.github.io.git $MR_REPO
 stowable = true
 
 # vim: ft=dosini
