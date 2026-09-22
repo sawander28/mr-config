@@ -24,7 +24,7 @@ update =
 	 ln -sf "$MR_REPO/.stow-global-ignore" ~
 
 # =============================================================================
-# Security repos
+# Sec repos
 # =============================================================================
 
 [$HOME/.ssh]
@@ -90,7 +90,6 @@ stowable = true
 
 [$HOME/repos/anon/runit-config]
 checkout = git clone git@myrepo.dmz.home.arpa:runit-config.git $MR_REPO
-lib = MR_FOLD=
 stowable = true
 
 [$HOME/repos/anon/shell-env]
@@ -115,14 +114,43 @@ stowable = true
 
 [$HOME/repos/anon/openbsd-config]
 checkout = git clone git@myrepo.dmz.home.arpa:openbsd-config.git $MR_REPO
-stowable = true
 
 [$HOME/repos/anon/freebsd-config]
 checkout = git clone git@myrepo.dmz.home.arpa:freebsd-config.git $MR_REPO
-stowable = true
 
 [$HOME/repos/anon/sawander28.github.io]
 checkout = git clone git@myrepo.dmz.home.arpa:sawander28.github.io.git $MR_REPO
-stowable = true
+fixups = git_ensure_remote github git@github.com:sawander28/sawander28.gitub.io.git
+
+[$HOME/repos/anon/debian-live-build]
+checkout = git clone git@myrepo.dmz.home.arpa:debian-live-build.git $MR_REPO
+
+[$HOME/repos/anon/debian-mmdebstrap]
+checkout = git clone git@myrepo.dmz.home.arpa:debian-mmdebstrap.git $MR_REPO
+fixups = git_ensure_remote github git@github.com:sawander28/debian-mmdebstrap.git
+
+[$HOME/repos/anon/tor-container]
+checkout = git clone git@myrepo.dmz.home.arpa:tor-container.git $MR_REPO
+fixups = git_ensure_remote github git@github.com:sawander28/tor-container.git
+
+[$HOME/repos/anon/arti-container]
+checkout = git clone git@myrepo.dmz.home.arpa:arti-container.git $MR_REPO
+fixups = git_ensure_remote github git@github.com:sawander28/arti-container.git
+
+[$HOME/repos/anon/openwrt-tor-client]
+checkout = git clone git@myrepo.dmz.home.arpa:openwrt-tor-client.git $MR_REPO
+fixups = git_ensure_remote github git@github.com:sawander28/openwrt-tor-client.git
+
+[$HOME/repos/anon/portage-wandsas]
+checkout = git clone git@myrepo.dmz.home.arpa:sawander28/portage-wandsas.git $MR_REPO
+fixups = git_ensure_remote github git@github.com:sawander28/portage-wandsas.git
+
+[$HOME/repos/anon/wandsas-overlay]
+checkout = git clone git@myrepo.dmz.home.arpa:sawander28/wandsas-overlay.git $MR_REPO
+fixups = git_ensure_remote github git@github.com:sawander28/wandsas-overlay.git
+
+[$HOME/repos/anon/onion-msg-app]
+checkout = git clone git@myrepo.dmz.home.arpa:sawander28/onion-msg-app.git $MR_REPO
+fixuos = git_ensure_remote github git@github.com:sawander28/onion-msg-app.git
 
 # vim: ft=dosini
