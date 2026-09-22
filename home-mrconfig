@@ -3,7 +3,7 @@ include = cat /usr/local/lib/mr/stow
 lib = . /usr/local/lib/mr/mrlib
 
 # =============================================================================
-# -*- Myrepos/mr
+# Myrepos/mr
 # =============================================================================
 
 [$HOME/repos/vcs/myrepos]
@@ -24,7 +24,7 @@ update =
 	 ln -sf "$MR_REPO/.stow-global-ignore" ~
 
 # =============================================================================
-# -*- Security repos -*-
+# Security repos
 # =============================================================================
 
 [$HOME/.ssh]
@@ -40,7 +40,7 @@ checkout = git clone git@myrepo.dmz.home.arpa:gnupg-anon.git $MR_REPO
 fixups = check_privileges
 
 # =============================================================================
-# -*- Themes/Styles -*-
+# Themes
 # =============================================================================
 
 [$HOME/.local/share/icons]
@@ -56,7 +56,7 @@ checkout = git clone git@myrepo.dmz.home.arpa:wallpapers.git $MR_REPO
 checkout = git clone git@myrepo.dmz.home.arpa:fonts.git $MR_REPO
 
 # =============================================================================
-# -*- Shellscripts -*-
+# Shellscripts
 # =============================================================================
 
 [$HOME/repos/anon/scripts]
@@ -66,7 +66,7 @@ checkout = git clone git@myrepo.dmz.home.arpa:scripts.git $MR_REPO
 checkout = git clone git@myrepo.dmz.home.arpa:admin-scripts.git $MR_REPO
 
 # =============================================================================
-# -*- My dotfiles -*-
+# My dotfiles
 # =============================================================================
 
 [$HOME/repos/anon/mystow]
