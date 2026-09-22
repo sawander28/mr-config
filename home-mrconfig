@@ -12,6 +12,18 @@ checkout = git clone git@myrepo.dmz.home.arpa:myrepos.git $MR_REPO
 update = make clean && sudo make install
 fixups = git_ensure_remote upstream git://myrepos.branchable.com/myrepos
 
+[$HOME/repos/vcs/stow]
+order = 2
+checkout = git clone git@myrepo.dmz.home.arpa:stow.git
+update = 
+	 autoreconf -fi
+	 ./configure --prefix=/usr/local
+	 make -j4
+	 sudo make install
+fixups = git_ensure_remote upstream git clone --depth 289 --no-single-branch \
+  https://git.savannah.gnu.org/git/stow.git
+skip = true
+
 [$HOME/repos/anon/mr-config]
 name = mr-config
 order = 3
@@ -58,6 +70,10 @@ checkout = git clone git@myrepo.dmz.home.arpa:fonts.git $MR_REPO
 [$HOME/.mywiki]
 checkout = git clone git@myrepo.dmz.home.arpa:mywiki.git $MR_REPO
 
+[$HOME/repos/anon/sawander28.github.io]
+checkout = git clone git@myrepo.dmz.home.arpa:sawander28.github.io.git $MR_REPO
+fixups = git_ensure_remote github git@github.com:sawander28/sawander28.gitub.io.git
+
 [$HOME/repos/anon/scripts]
 checkout = git clone git@myrepo.dmz.home.arpa:scripts.git $MR_REPO
 
@@ -90,6 +106,7 @@ stowable = true
 
 [$HOME/repos/anon/runit-config]
 checkout = git clone git@myrepo.dmz.home.arpa:runit-config.git $MR_REPO
+lib = MR_FOLD=
 stowable = true
 
 [$HOME/repos/anon/shell-env]
@@ -112,15 +129,18 @@ checkout = git clone git@myrepo.dmz.home.arpa:xorg-config.git $MR_REPO
 lib = MR_FOLD=
 stowable = true
 
+# -----------------------------------------------------------------------------
+#   configs
+
 [$HOME/repos/anon/openbsd-config]
 checkout = git clone git@myrepo.dmz.home.arpa:openbsd-config.git $MR_REPO
 
 [$HOME/repos/anon/freebsd-config]
 checkout = git clone git@myrepo.dmz.home.arpa:freebsd-config.git $MR_REPO
 
-[$HOME/repos/anon/sawander28.github.io]
-checkout = git clone git@myrepo.dmz.home.arpa:sawander28.github.io.git $MR_REPO
-fixups = git_ensure_remote github git@github.com:sawander28/sawander28.gitub.io.git
+[$HOME/repos/anon/openwrt-tor-client]
+checkout = git clone git@myrepo.dmz.home.arpa:openwrt-tor-client.git $MR_REPO
+fixups = git_ensure_remote github git@github.com:sawander28/openwrt-tor-client.git
 
 [$HOME/repos/anon/debian-live-build]
 checkout = git clone git@myrepo.dmz.home.arpa:debian-live-build.git $MR_REPO
@@ -137,10 +157,6 @@ fixups = git_ensure_remote github git@github.com:sawander28/tor-container.git
 checkout = git clone git@myrepo.dmz.home.arpa:arti-container.git $MR_REPO
 fixups = git_ensure_remote github git@github.com:sawander28/arti-container.git
 
-[$HOME/repos/anon/openwrt-tor-client]
-checkout = git clone git@myrepo.dmz.home.arpa:openwrt-tor-client.git $MR_REPO
-fixups = git_ensure_remote github git@github.com:sawander28/openwrt-tor-client.git
-
 [$HOME/repos/anon/portage-wandsas]
 checkout = git clone git@myrepo.dmz.home.arpa:sawander28/portage-wandsas.git $MR_REPO
 fixups = git_ensure_remote github git@github.com:sawander28/portage-wandsas.git
@@ -151,6 +167,10 @@ fixups = git_ensure_remote github git@github.com:sawander28/wandsas-overlay.git
 
 [$HOME/repos/anon/onion-msg-app]
 checkout = git clone git@myrepo.dmz.home.arpa:sawander28/onion-msg-app.git $MR_REPO
-fixuos = git_ensure_remote github git@github.com:sawander28/onion-msg-app.git
+fixups = git_ensure_remote github git@github.com:sawander28/onion-msg-app.git
 
-# vim: ft=dosini
+[repos/media/mpdris2-rs]
+checkout = git clone git@myrepo.dmz.home.arpa:mpdris2-rs.git $MR_REPO
+fixups = git_ensure_remote github git@github.com:szclsya/mpdris2-rs.git
+
+# vim: ft=dosini ts=2 sts=2 sw=2 et
