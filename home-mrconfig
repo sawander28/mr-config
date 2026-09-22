@@ -82,4 +82,44 @@ checkout = git clone git@myrepo.dmz.home.arpa:vim-config.git $MR_REPO
 lib = MR_FOLD=
 stowable = true
 
+[$HOME/repos/anon/git-config]
+checkout = git clone git@myrepo.dmz.home.arpa:git-config.git $MR_REPO
+lib = MR_FOLD=
+stowable = true
+
+[$HOME/repos/anon/mail-config]
+checkout = git clone git@myrepo.dmz.home.arpa:mail-config.git $MR_REPO
+lib = MR_FOLD=
+stowable = true
+
+[$HOME/repos/anon/mpd-config]
+checkout = git clone git@myrepo.dmz.home.arpa:mpd-config.git $MR_REPO
+lib = MR_FOLD=
+stowable = true
+
+[$HOME/repos/anon/runit-config]
+checkout = git clone git@myrepo.dmz.home.arpa:runit-config.git $MR_REPO
+lib = MR_FOLD=
+stowable = true
+
+[$HOME/repos/anon/shell-env]
+checkout = git clone git@myrepo.dmz.home.arpa:shell-env.git $MR_REPO
+lib = MR_FOLD=
+stowable = true
+
+[$HOME/repos/anon/tmux-config]
+checkout = git clone git@myrepo.dmz.home.arpa:tmux-config.git $MR_REPO
+lib = MR_FOLD=
+stowable = true
+
+[$HOME/repos/anon/wayland-config]
+checkout = git clone git@myrepo.dmz.home.arpa:wayland-config.git $MR_REPO
+lib = MR_FOLD=
+stowable = true
+
+[$HOME/repos/anon/xorg-config]
+checkout = git clone git@myrepo.dmz.home.arpa:xorg-config.git $MR_REPO
+lib = MR_FOLD=
+stowable = true
+
 # vim: ft=dosini
