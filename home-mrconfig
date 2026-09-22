@@ -55,9 +55,8 @@ checkout = git clone git@myrepo.dmz.home.arpa:wallpapers.git $MR_REPO
 [$HOME/.local/share/fonts]
 checkout = git clone git@myrepo.dmz.home.arpa:fonts.git $MR_REPO
 
-# =============================================================================
-# Shellscripts
-# =============================================================================
+[$HOME/.mywiki]
+checkout = git clone git@myrepo.dmz.home.arpa:mywiki.git $MR_REPO
 
 [$HOME/repos/anon/scripts]
 checkout = git clone git@myrepo.dmz.home.arpa:scripts.git $MR_REPO
@@ -69,13 +68,6 @@ checkout = git clone git@myrepo.dmz.home.arpa:admin-scripts.git $MR_REPO
 # My dotfiles
 # =============================================================================
 
-[$HOME/repos/anon/mystow]
-checkout = git clone 'git@myrepo.dmz.home.arpa:mystow.git' $MR_REPO
-fixups = git_ensure_remote sourcehut git@git.sr.ht:~sawander/mystow
-skip = true
-
-[$HOME/.mywiki]
-checkout = git clone git@myrepo.dmz.home.arpa:mywiki.git $MR_REPO
 
 [$HOME/repos/anon/vim-config]
 checkout = git clone git@myrepo.dmz.home.arpa:vim-config.git $MR_REPO
