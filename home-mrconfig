@@ -129,14 +129,21 @@ checkout = git clone git@myrepo.dmz.home.arpa:xorg-config.git $MR_REPO
 lib = MR_FOLD=
 stowable = true
 
-# -----------------------------------------------------------------------------
-#   configs
+# =============================================================================
+#     configs
+# =============================================================================
 
 [$HOME/repos/anon/openbsd-config]
 checkout = git clone git@myrepo.dmz.home.arpa:openbsd-config.git $MR_REPO
 
 [$HOME/repos/anon/freebsd-config]
 checkout = git clone git@myrepo.dmz.home.arpa:freebsd-config.git $MR_REPO
+
+[$HOME/repos/anon/debian-config]
+checkout = git clone git@myrepo.dmz.home.arpa:debian-config.git $MR_REPO
+
+[$HOME/repos/anon/fedora-config]
+checkout = git clone git@myrepo.dmz.home.arpa:fedora-config.git $MR_REPO
 
 [$HOME/repos/anon/openwrt-tor-client]
 checkout = git clone git@myrepo.dmz.home.arpa:openwrt-tor-client.git $MR_REPO
